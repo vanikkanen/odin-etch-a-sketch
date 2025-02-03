@@ -1,0 +1,8 @@
+.container {
+}
+
+.gridSquare {
+    height: 128px;
+    width: 128px;
+    border: 1px solid gray;
+}

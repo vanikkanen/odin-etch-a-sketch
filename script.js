@@ -8,6 +8,7 @@ function createSquares(squaresPerRow) {
         let gridSquare = document.createElement("div")
         gridSquare.addEventListener("mouseover", (e) => {
             gridSquare.style.background = randomRGB()
+            gridSquare.style.opacity = Math.min((parseFloat(gridSquare.style.opacity) || 0)+0.1, 1)
         })
         gridSquare.className = "gridSquare"
         gridSquare.style.width = `${squareSize}px`

@@ -7,7 +7,7 @@ function createSquares(squaresPerRow) {
     for (let i = 0; i < totalSquares; i++) {
         let gridSquare = document.createElement("div")
         gridSquare.addEventListener("mouseover", (e) => {
-            gridSquare.style.background = "gray"
+            gridSquare.style.background = randomRGB()
         })
         gridSquare.className = "gridSquare"
         gridSquare.style.width = `${squareSize}px`
@@ -15,8 +15,6 @@ function createSquares(squaresPerRow) {
         container.appendChild(gridSquare)
     }
 }
-
-createSquares(16)
 
 function getValidInput() {
     let input = null
@@ -48,3 +46,15 @@ function resetGrid() {
 
     createSquares(input)
 }
+
+function randomRGB() {
+    const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1))
+    const r = randomBetween(0, 255)
+    const g = randomBetween(0, 255)
+    const b = randomBetween(0, 255)
+    const rgb = `rgb(${r},${g},${b})`
+    return rgb
+}
+
+// Starting point. 16*16 grid when the grid is loaded first
+createSquares(16)
